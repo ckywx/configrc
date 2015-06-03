@@ -1,2 +1,6 @@
 # configrc
-It is rc config files
+
+It is my rc config files
+
+- .vimrc
+- .screenrc
