@@ -1,6 +1,8 @@
 "  VimRC of ShepJeng (t9054@cs.nccu.edu.tw)
 "set nocindent
 
+set autoindent
+set smartindent
 "set cindent
 set nocompatible
 set secure
