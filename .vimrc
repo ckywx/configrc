@@ -10,6 +10,9 @@ set backspace=indent,eol,start
 " Backspace and cursor keys wrap to
 set whichwrap+=<,>,h,l
 
+" Set line number
+set nu
+
 "Encoding
 set encoding=utf-8
 set fileencoding=utf-8
@@ -109,8 +112,8 @@ set autoread
 "set textwidth=80
 
 "Indenting
-set autoindent " Copy indent from current line when starting a new line
-set nosmartindent
+"set autoindent " Copy indent from current line when starting a new line
+"set nosmartindent
 
 "Tab
 set expandtab
