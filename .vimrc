@@ -4,9 +4,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" Allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
 " Backspace and cursor keys wrap to
 set whichwrap+=<,>,h,l
 
@@ -111,23 +108,13 @@ set autoread
 "set linebreak
 "set textwidth=80
 
-"Indenting
-"set autoindent " Copy indent from current line when starting a new line
-"set nosmartindent
 
 "Tab
 set expandtab
 set nosmarttab
-set tabstop=2      " real tab characters are 8 spaces wide
-set softtabstop=2   " <BS> over an autoindent deletes both spaces
-set shiftwidth=2    " an indent level is 4 spaces wide
-
-"Folding
-set foldenable
-set foldmethod=syntax
-set foldlevel=100
-"set foldcolumn=2
-nnoremap <SPACE> za
+set tabstop=4      " real tab characters are 8 spaces wide
+set softtabstop=4   " <BS> over an autoindent deletes both spaces
+set shiftwidth=4    " an indent level is 4 spaces wide
 
 "Prefer the new window on the right instead of the left
 set splitright
@@ -136,29 +123,6 @@ set splitright
 set mouse=
 "Most terminals send modern xterm mouse reporting but this isn't always detected in GNU Screen.
 set ttymouse=xterm2
-
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-
-    " Enable file type detection.
-    " Use the default filetype settings, so that mail gets 'tw' set to 72,
-    " 'cindent' is on in C files, etc.
-    " Also load indent files, to automatically do language-dependent indenting.
-    filetype plugin on
-    filetype indent on
-
-    "Highlight current line in Insert Mode
-    function! s:EnterInsert()
-        set cursorline
-    endfunction
-
-    function! s:LeaveInsert()
-        set nocursorline
-    endfunction
-
-    autocmd InsertLeave * call s:LeaveInsert()
-    autocmd InsertEnter * call s:EnterInsert()
-endif
 
 "Markdown
 augroup mkd
@@ -187,24 +151,6 @@ let g:tagbar_autoclose = 1
 let g:tagbar_width = 40
 let g:tagbar_autofocus = 1
 let g:tagbar_expand = 1
-
-"Spell
-map <F5> :set spell!<CR><BAR>:echo "Spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
-
-"List
-map <F6> :set list!<CR><BAR>:set list?<CR>
-
-"Expand tab
-"map <F7> :set expandtab!<CR><BAR>:set expandtab?<CR>
-map <F7> :if &expandtab<BAR>
-        \   set noexpandtab<BAR>
-        \   set tabstop=4<BAR>
-        \   set expandtab?<BAR>
-        \ else<BAR>
-        \   set expandtab<BAR>
-        \   set tabstop=8<BAR>
-        \   set expandtab?<BAR>
-        \ endif<CR><BAR>
 
 if has("gui_running")
     set t_Co=256
