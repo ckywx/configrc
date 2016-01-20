@@ -44,31 +44,8 @@ set splitright
 set mouse=
 set ttymouse=xterm2
 set backspace=2
-syntax enable
 set t_Co=16
 set secure
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 set smartindent 
-set completeopt=preview,menu 
-:inoremap ( ()<ESC>i 
-:inoremap  ) <c-r>=ClosePair(')')<CR> 
-:inoremap { {<CR>}<ESC>O 
-:inoremap  } <c-r>=ClosePair('}')<CR> 
-:inoremap [ []<ESC>i 
-:inoremap  ] <c-r>=ClosePair(']')<CR> 
-:inoremap " ""<ESC>i 
-":inoremap " <c-r>=ClosePair('"')<CR> 
-:inoremap ' ''<ESC>i 
-":inoremap ' <c-r>=ClosePair('\'')<CR> 
-function! ClosePair(char) 
-    if getline('.')[col('.') - 1] == a:char 
-        return "\<Right>" 
-    else 
-        return a:char 
-    endif 
-endfunction 
 set completeopt=longest,menu 
 
