@@ -58,3 +58,7 @@ let Tlist_Use_Right_Window=1
 let g:neocomplcache_enable_at_startup = 1
 " 提示的时候默认不选择
 let g:neocomplcache_enable_auto_select = 0 
+" nt NERDTree
+map nt :NERDTree <CR>
+" tl TlistToggle
+map tl :TlistToggle <CR>
