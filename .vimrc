@@ -62,3 +62,6 @@ let g:neocomplcache_enable_auto_select = 0
 map nt :NERDTree <CR>
 " tl TlistToggle
 map tl :TlistToggle <CR>
+" 自动补全括号
+inoremap ( ()<ESC>i
+inoremap { {}<ESC>i
