@@ -47,5 +47,14 @@ set backspace=2
 set t_Co=16
 set secure
 set smartindent 
-set completeopt=longest,menu 
-
+set completeopt=longest,menu
+set autoindent
+" C语言自动对齐
+set cindent
+let Tlist_Show_One_File=1  
+let Tlist_Exit_OnlyWindow=1
+" 函数列表窗口放右
+let Tlist_Use_Right_Window=1
+let g:neocomplcache_enable_at_startup = 1
+" 提示的时候默认不选择
+let g:neocomplcache_enable_auto_select = 0 
