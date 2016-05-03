@@ -65,3 +65,6 @@ map tl :TlistToggle <CR>
 " 自动补全括号
 inoremap ( ()<ESC>i
 inoremap { {}<ESC>i
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+inoremap [ []<ESC>i
